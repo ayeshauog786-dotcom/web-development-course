@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Function Activity</title>
+        <style>
+            body {
+                font-family:Arial, Helvetica, sans-serif;
+                background: #eef8ff;
+                text-align: center;
+                padding: 30px;
+            }
+
+            h1{
+                color: #0066cc;
+            }
+
+            input{
+                padding: 10px;
+                width: 220px;
+                margin: 10px;
+            }
+
+            button{
+                padding: 10px 18px;
+                margin: 8px;
+                background: #0066cc;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background: #004d99;
+            }
+
+            #output{
+                margin-top:20px;
+                font-size: 20px;
+                color: darkgreen;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Function practice</h1>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <br>
+    
+        <button onclick="showGreeting()">Basic Function</button>
+
+        <button onclick="checkScope()">Variable Scope</button>
+
+        <button onclick="showLength()">Function Expression</button>
+
+        <div id="output"></div>
+        <script>
+
+            let school = "ABC school";
+
+            function showGreeting(){
+                let student =document.getElementById("name").value;
+
+                document.getElementById("output").innerHTML = 
+                "Welcome" + student + " to " + school + "!";
+            }
+
+            function checkScope(){
+
+                let className = "grade 8";
+
+                document.getElementById("output").innerHTML =
+                "school: " + school + "<br>class: " + className;
+            }
+
+            const countLetters = function(name){
+                return name.length;
+            }
+
+            function showLength(){
+
+                let student = document.getElementById("name").value;
+
+                let total = countLetters(student);
+                document.getElementById("output").innerHTML =
+                "Your name has" + total + "letters.";
+            }
+        </script>
+    </body>
+</html>
