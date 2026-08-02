@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snack Stack</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background: #fff8e7;
+                text-align: center;
+                padding: 30px;
+            }
+
+            h1 {
+                color: #ff7b00;
+            }
+
+            input {
+                padding: 8px;
+                width: 220px;
+                border: 2px solid #ff7b00;
+                border-radius: 5px;
+            }
+
+            button {
+                padding: 8px 15px;
+                margin: 8px;
+                background-color: #ff7b00;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background: #e66b00;
+            }
+
+            #output {
+                margin-top: 20px;
+                font-size: 18px;
+                color: darkgreen;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Snack Stack</h1>
+
+        <input type="text" id="snack" placeholder="Enter a snack">
+        <br><br>
+
+        <button onclick="addSnack()">Add Snack</button>
+        <button onclick="removesnack()">Eat last snack</button>
+        <div id="output"></div><script>
+            let snacks = [];
+            function addSnack() {
+
+                let item = document.getElementById("snack").value;
+
+                if (item == "") {
+                    alert("Please enter a snack");
+                    return;
+                }
+
+                snacks.push(item);
+
+                document.getElementById('snack').value = "";
+
+                displaystack();
+
+            }
+
+            function removesnack() {
+
+                if(snacks.lengt == 0){
+                    alert("no snacks left!");
+                    return;
+                }
+
+                snacks.pop();
+                displaystack();
+            }
+
+            function displaystack() {
+                document.getElementById("output").innerHTML = 
+                "<b>Snack stack:</b><br>" + snacks.join("<br>");
+            }
+        </script>
+    </body>
+</html>
